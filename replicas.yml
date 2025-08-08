@@ -1,0 +1,23 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-replicasets
+  namespace: shoeb-namespace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      name: nginx-shoeb
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+        - name: nginx-rep-pod
+          image: nginx:latest
+          ports:
+            - containerPort: 80

@@ -1,0 +1,22 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-daemonsets
+  namespace: shoeb-namespace
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      name: nginx-shoeb
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+        - name: nginx-dmn-pod
+          image: nginx:latest
+          ports:
+            - containerPort: 80
