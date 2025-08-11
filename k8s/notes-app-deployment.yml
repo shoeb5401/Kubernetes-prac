@@ -12,7 +12,6 @@ spec:
       app: notes-app
   template:
     metadata:
-
       labels:
         app.kubernetes.io/name: notes-app
         app: notes-app
@@ -29,3 +28,11 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8000
