@@ -1,0 +1,9 @@
+kind: DevOpsBatch
+apiVersion: zsm3084.com/v1
+metadata:
+  name: junoon-batch-9
+spec:
+  name: Devops-Zero-to-Hero
+  duration: from January to April 2025
+  platform: zsm3084.com
+  mode: Live as always on Platform
